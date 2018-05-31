@@ -1,0 +1,95 @@
+
+usgae of module
+[ec2-user@ip-10-0-0-134 modules]$ vim demofunction.py
+
+
+>>> import demofunction
+>>> funusage = 'demo of use module'
+>>> demofunction.say(funusage) --> example for calling module
+Wanna say! demo of use module
+[ec2-user@ip-10-0-0-134 modules]$ cat demofunction.py 4
+def say(var):
+  print("Wanna say!", var)
+
+
+
+>>> samlist = ['Mon', 'Tue', 'Wedn', 'Thur', 'Fri', 'Sat', 'Sun']
+>>> import random 
+>>> random.choice(samlist)
+'Fri'
+>>> random.choice(samlist)
+'Tue'
+>>> random.choice(samlist)
+'Thur'
+>>> exit()
+[ec2-user@ip-10-0-0-134 modules]$ vim report.py
+[ec2-user@ip-10-0-0-134 modules]$ cat report.py
+from random import choice
+
+def get_report():
+    possibilities = ['rain', 'snow', 'sleet', 'fog', 'sun', 'who knows']
+    report = choice(possibilities)
+    return report
+
+
+[ec2-user@ip-10-0-0-134 modules]$ python
+Python 3.6.4 |Anaconda, Inc.| (default, Jan 16 2018, 18:10:19) 
+[GCC 7.2.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> 
+>>> import report
+>>> print (report.get_report())
+who knows
+>>> print (report.get_report())
+who knows
+>>> print (report.get_report())
+sleet
+>>> print (report.get_report())
+snow
+>>> exit()
+
+[ec2-user@ip-10-0-0-134 modules]$ python
+Python 3.6.4 |Anaconda, Inc.| (default, Jan 16 2018, 18:10:19) 
+[GCC 7.2.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> from report import get_report
+>>> print(get_report())
+who knows
+
+>>> import random
+>>> random.random()
+0.11838826658459956
+>>> random.randint(1, 10)
+4
+>>> random.randint(1, 10)
+4
+>>> random.randint(1, 10)
+9
+>>> random.randint(1, 10)
+5
+>>> import statistics
+>>> a = [0, 1, 1, 3, 4, 9, 15]
+>>> statistics.mean(a)
+4.714285714285714
+>>> statistics.median(a)
+3
+>>> statistics.mode(a)
+1
+>>> statistics.stdev(a)
+5.437961803049794
+>>> statistics.variance(a)
+29.571428571428566
+>>> import math
+>>> math.factorial(5)
+120
+>>> math.pi
+3.141592653589793
+>>> math.sqrt(5)
+2.23606797749979
+>>> math.log(256, 2)
+8.0
+>>> import datetime
+>>> datetime.datetime.now()
+datetime.datetime(2018, 5, 31, 4, 11, 4, 689212)
+>>> datetime.datetime.now().strftime("%F")
+'2018-05-31'

@@ -1,0 +1,92 @@
+>>> import os
+>>> path = os.getcwd()
+>>> print(path)
+/home/ec2-user/python/os_module
+
+
+os.getcwd()
+os. --> module
+getcwd --> function
+
+>>> os.listdir()
+['file1.txt', 'os_notes.txt', 'ostestdir', 'file1_link.txt', '.os_notes.txt.swp', 'file2.txt']
+>>> contents = os.listdir("/home/ec2-user/python")
+>>> print(contents)
+['.notes.txt.swp', 'os_module', 'sys_module']
+
+>>> os.mkdir("testdir")
+>>> os.listdir()
+['file1.txt', 'os_notes.txt', 'ostestdir', 'file1_link.txt', '.os_notes.txt.swp', 'file2.txt', 'testdir']
+>>> 
+>>> os.makedirs("testdir/test1/test2")
+>>> os.listdir("testdir")
+['test1']
+>>> os.listdir("testdir/test1")
+['test2']
+>>> 
+
+
+>>> os.remove("file1.txt")
+>>> os.listdir()
+['os_notes.txt', 'ostestdir', 'file1_link.txt', '.os_notes.txt.swp', 'file2.txt', 'testdir']
+
+>>> os.rmdir("testdir")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+OSError: [Errno 39] Directory not empty: 'testdir'
+>>> os.removedirs("testdir")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/ec2-user/anaconda3/lib/python3.6/os.py", line 238, in removedirs
+    rmdir(name)
+OSError: [Errno 39] Directory not empty: 'testdir'
+>>> os.removedirs("testdir/")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/ec2-user/anaconda3/lib/python3.6/os.py", line 238, in removedirs
+    rmdir(name)
+OSError: [Errno 39] Directory not empty: 'testdir/'
+>>> 
+
+>>> print(path)
+/home/ec2-user/python/os_module
+>>> os.path.exists("path")
+False
+>>> os.path.exists(path)
+True
+>>> os.listdir()
+['os_notes.txt', 'ostestdir', 'file1_link.txt', '.os_notes.txt.swp', 'file2.txt', 'testdir']
+>>> os.path.isfile("os_notes.txt")
+True
+>>> os.path.isfile("testdir")
+False
+>>> os.path.isdir("testdir")
+True
+>>> os.path.islink("file1_link.txt")
+True
+
+
+s.path.basename()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: basename() missing 1 required positional argument: 'p'
+>>> os.path.basename(path)
+'os_module'
+>>> os.path.getsize("file2.txt")
+20
+>>> os.path.getsize("file1.txt")
+0
+
+
+>>> os.system("uname -r")
+4.9.81-35.56.amzn1.x86_64
+0
+
+>>> files = os.listdir()
+>>> for i in files:
+...   if os.path.getsize(i) == 0:
+...     print(i)
+... 
+file1.txt
+file1_link.txt
+file3.txt

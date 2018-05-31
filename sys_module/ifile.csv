@@ -1,0 +1,6 @@
+instance-name,instance-id,instance-status,os-type,region
+ajay,i-124356,running,linux,mumbai
+vijay,i-45645,running,windows,singapore
+ramesh,i-697866,running,mac,us
+naveen,i-5877,stopped,windows,mumbai
+jagadeesh,i-70987,stopped,linux,london

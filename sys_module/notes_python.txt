@@ -1,0 +1,11 @@
+0 -- input
+1 -- output
+2 -- error
+
+
+ls ex_9.py randomfile > std_out 2> std_err
+cat std_err
+cat std_out
+
+pipe operator convert standart output to input
+exam: cat std_out | grep "ex_9.py"
